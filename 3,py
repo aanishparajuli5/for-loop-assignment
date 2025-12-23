@@ -1,0 +1,40 @@
+import random
+
+quiz_questions = {
+    "q1": {
+        "question": "What is the capital of Nepal?",
+        "options": {"A": "Pokhara", "B": "Kathmandu", "C": "Lalitpur", "D": "Biratnagar"},
+        "answer": "B"
+    },
+    "q2": {
+        "question": "Which data type stores key-value pairs?",
+        "options": {"A": "List", "B": "Tuple", "C": "Dictionary", "D": "Set"},
+        "answer": "C"
+    },
+    "q3": {
+        "question": "Which keyword is used for loop?",
+        "options": {"A": "if", "B": "while", "C": "for", "D": "else"},
+        "answer": "C"
+    }
+}
+
+score = 0
+keys = list(quiz_questions.keys())
+random.shuffle(keys)
+
+for key in keys:
+    q = quiz_questions[key]
+    print("\n", q["question"])
+
+    for opt, val in q["options"].items():
+        print(opt, ":", val)
+
+    user_ans = input("Enter your answer (A/B/C/D): ").upper()
+
+    if user_ans == q["answer"]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong!")
+
+print("\nFinal Score:", score)

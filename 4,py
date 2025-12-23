@@ -1,0 +1,11 @@
+total_items = int(input("Enter total number of items: "))
+
+prices = []
+
+for i in range(1, total_items + 1):
+    price = float(input(f"Enter price of item {i}: "))
+    prices.append(price)
+
+total_cost = sum(prices)
+
+print("Total cost of items:", total_cost)
